@@ -56,6 +56,7 @@ export interface LineSeriesType
   dataKey?: string;
   stack?: string;
   area?: boolean;
+  areaBrightness?: number;
   label?: string;
   curve?: CurveType;
   /**

@@ -16,7 +16,9 @@ export const AreaElementPath = styled(animated.path, {
   stroke: 'none',
   fill: ownerState.isHighlighted
     ? d3Color(ownerState.color)!.brighter(1).formatHex()
-    : d3Color(ownerState.color)!.brighter(0.5).formatHex(),
+    : d3Color(ownerState.color)!
+        .brighter(ownerState.brightness ?? 0.5)
+        .formatHex(),
   transition: 'opacity 0.2s ease-in, fill 0.2s ease-in',
   opacity: ownerState.isFaded ? 0.3 : 1,
 }));
@@ -74,6 +76,7 @@ AnimatedArea.propTypes = {
   // ----------------------------------------------------------------------
   d: PropTypes.string.isRequired,
   ownerState: PropTypes.shape({
+    brightness: PropTypes.number,
     classes: PropTypes.object,
     color: PropTypes.string.isRequired,
     id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,

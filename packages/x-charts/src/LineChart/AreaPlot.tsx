@@ -120,13 +120,14 @@ function AreaPlot(props: AreaPlotProps) {
       {completedData
         .reverse()
         .map(
-          ({ d, seriesId, color, highlightScope, area }) =>
+          ({ d, seriesId, color, areaBrightness, highlightScope, area }) =>
             !!area && (
               <AreaElement
                 key={seriesId}
                 id={seriesId}
                 d={d}
                 color={color}
+                brightness={areaBrightness}
                 highlightScope={highlightScope}
                 slots={slots}
                 slotProps={slotProps}
