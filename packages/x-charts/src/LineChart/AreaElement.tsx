@@ -148,6 +148,7 @@ AreaElement.propTypes = {
   // ----------------------------------------------------------------------
   classes: PropTypes.object,
   color: PropTypes.string.isRequired,
+  brightness: PropTypes.number,
   d: PropTypes.string.isRequired,
   highlightScope: PropTypes.shape({
     faded: PropTypes.oneOf(['global', 'none', 'series']),
