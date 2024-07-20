@@ -28,6 +28,7 @@ export type AreaElementClassKey = keyof AreaElementClasses;
 export interface AreaElementOwnerState {
   id: SeriesId;
   color: string;
+  brightness?: number;
   isFaded: boolean;
   isHighlighted: boolean;
   classes?: Partial<AreaElementClasses>;
@@ -95,6 +96,7 @@ export interface AreaElementProps
 function AreaElement(props: AreaElementProps) {
   const {
     id,
+    brightness,
     classes: innerClasses,
     color,
     highlightScope,
@@ -115,6 +117,7 @@ function AreaElement(props: AreaElementProps) {
   const ownerState = {
     id,
     classes: innerClasses,
+    brightness,
     color,
     isFaded,
     isHighlighted,
